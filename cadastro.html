@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+	<title> Fábrica de Gordos </title>
+	<link rel="stylesheet" type="text/css" href="css1.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<img id="image1" src="logo.png">
+<div id="principal">
+
+<div id="texto">	
+<p id="titulo">Cadastre-se no nosso site!</p>
+<br>
+<p class="central">Cadastre-se para receber novas informações do site em seu email!</p>
+<br>
+<br>
+
+            
+                     
+            
+            <div id="camposfaltantes"></div>            
+            
+            <div class="central">  
+
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" > 
+
+            </div>
+
+            <br>
+            <div class="central">  
+
+                <label for="nome">Nome</label>
+                <input type="text" name="nome" id="nome"> 
+
+            </div>
+
+                     
+            <br>
+           
+           
+             <div class="central">
+            
+                <input class="butao" type="submit" id="submitButton" value="Cadastre-se">
+
+            </div>
+            
+        </div>	
+
+
+
+
+
+<div>
+<button onclick="myFunction1()" id="buttoes">HOME</button>
+<button onclick="myFunction2()" id="buttoes">LANCHES</button>
+<button onclick="myFunction3()" id="buttoes">BOLOS E TORTAS</button>
+<button onclick="myFunction4()" id="buttoes">SOBREMESAS</button>
+<button onclick="myFunction5()" id="buttoes">PRATOS ÚNICOS</button>
+<button onclick="myFunction6()" id="buttoes">CADASTRO</button>
+</div>
+
+</div>
+</body>
+<script type="text/javascript">
+function myFunction1(){
+location.href = "Home.html" ;
+}    
+function myFunction2(){
+location.href = "Lanches.html" ;
+}
+function myFunction3(){
+location.href = "BoloseTortas.html" ;
+}    
+function myFunction4(){
+location.href = "Sobremesas.html" ;
+}    
+function myFunction5(){
+location.href = "PratosUnicos.html" ;
+}     
+function myFunction6(){
+location.href = "cadastro.html" ;
+} 
+
+ function isEmail(email) {  
+                var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  
+                return regex.test(email);                
+            }
+            
+            $("#submitButton").click(function() {
+                
+             
+                var camposfaltantes = "";
+                
+                if ($("#email").val() == "") {
+                    
+                    camposfaltantes += "Falta preencher o email\n";
+                    
+                }
+                
+                if ($("#nome").val() == "") {
+                    
+                    camposfaltantes += "Falta preencher o nome\n";
+                    
+                }
+
+            
+               
+                
+                if (isEmail($("#email").val()) == false) {
+                    
+                  camposfaltantes += "Email ínvalido\n";
+                    
+                }
+                
+
+                
+                
+                if (camposfaltantes != "") {
+                    
+                   alert(camposfaltantes);
+
+
+                    
+                } else {
+                    
+                     
+					alert("Cadastro concluido com sucesso!");
+
+                   
+                }
+                                 
+            });               
+
+    </script>
+</html>
